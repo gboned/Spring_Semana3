@@ -26,6 +26,10 @@ public class LlibreOpsBasic {
 	public Llibre carrega (String isbn) throws LlibreNoExisteixException {
 		// Crear una instancia de Llibre que busca un libro según su isbn.
 		Llibre llibre = em.find(Llibre.class, isbn);
+		// En caso de que no exista el libro, se lanza la excepción.
+		if (llibre == null) {
+			throw new LlibreNoExisteixException();
+		}
 		// Añadir ese libro a la base de datos.
 		em.persist(llibre);
 		// Devolver libro.
