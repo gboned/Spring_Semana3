@@ -71,6 +71,8 @@ public class LlibreOpsBasic {
 	 * Guarda a bbdd l'estat del llibre indicat
 	 */
 	public void modifica (Llibre llibre) {
+		// Hacer que se actualicen los cambios del libro.
+		llibre = em.merge(llibre);
 	}
 	
 	/**
