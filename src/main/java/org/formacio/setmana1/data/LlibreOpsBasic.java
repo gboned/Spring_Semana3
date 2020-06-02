@@ -80,7 +80,13 @@ public class LlibreOpsBasic {
 	 * (Aquest metode no llanca excepcions!)
 	 */
 	public boolean existeix (String isbn) {
+		// Creo instancia para buscar un libro por su isbn.
+		Llibre llibre = em.find(Llibre.class, isbn);
+		// En caso de que el libro no exista, devuelve false, de lo contrario devuelve true.
+		if (llibre == null) {
 		return false;
+		}
+		return true;
 	}
 
 	/**
