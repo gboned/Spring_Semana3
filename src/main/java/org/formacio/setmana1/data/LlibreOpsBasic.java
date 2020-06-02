@@ -40,6 +40,16 @@ public class LlibreOpsBasic {
 	 * Sense sorpreses: dona d'alta un nou llibre amb les propietats especificaques
 	 */
 	public void alta (String isbn, String autor, Integer pagines, Recomanacio recomanacio, String titol) {
+		// Crear instancia de libro nuevo.
+		Llibre nou = new Llibre();
+		// Se añaden los parámetros del nuevo libro.
+		nou.setIsbn(isbn);
+		nou.setAutor(autor);
+		nou.setPagines(pagines);
+		nou.setRecomanacio(recomanacio);
+		nou.setTitol(titol);
+		// Se guarda el nuevo libro en la base de datos.
+		em.persist(nou);
 	}
 	
 	/**
